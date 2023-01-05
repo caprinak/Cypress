@@ -1,0 +1,8 @@
+{
+ "name" :"bob",
+ "gender":"Female",
+ "productName": ["Blackberry","Nokia Edge"],
+ "first_name": "Khoa",
+ "last_name": "Nguyen",
+ "email": "nak@nhadep.com"
+}

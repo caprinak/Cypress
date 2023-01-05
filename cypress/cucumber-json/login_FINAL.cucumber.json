@@ -1,0 +1,180 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "WebdriverUniversity Login Page",
+    "line": 1,
+    "id": "webdriveruniversity-login-page",
+    "tags": [],
+    "uri": "login_FINAL.feature",
+    "elements": [
+      {
+        "id": "webdriveruniversity-login-page;test-login-via-webdriveruniversity-login-portal",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Test Login via WebdriverUniversity Login Portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I access the WebdriverUniversity Login Portal page",
+            "result": {
+              "status": "undefined",
+              "duration": 265000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I enter a username webdriver",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I enter a password webdriver123",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I click on the login button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I should be presented with the following message validation succeeded",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "webdriveruniversity-login-page;test-login-via-webdriveruniversity-login-portal",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Test Login via WebdriverUniversity Login Portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I access the WebdriverUniversity Login Portal page",
+            "result": {
+              "status": "undefined",
+              "duration": 114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I enter a username webdriver",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I enter a password webdriver555",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I click on the login button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I should be presented with the following message validation failed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "webdriveruniversity-login-page;test-login-via-webdriveruniversity-login-portal",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "Test Login via WebdriverUniversity Login Portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I access the WebdriverUniversity Login Portal page",
+            "result": {
+              "status": "undefined",
+              "duration": 76000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I enter a username joe",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I enter a password pass123",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I click on the login button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I should be presented with the following message validation failed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
