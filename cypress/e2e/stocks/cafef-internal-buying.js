@@ -14,8 +14,14 @@ describe("Find best deals", () => {
       const buyResult = []
       const sellResult = []
       const currentMonth = 12;
-      //let stocks = ["HTN"]
-      let stocks = ["HPG", "ADS", "NKG", "VCI", "PHR", "FCN","HHV", "TTF","CEO", "DIG","TV2", "ASP","BSI","HAX","HTN","VND","VCG"]
+     // let stocks = ["VGI"]
+      function hasDuplicates(array) {
+        return (new Set(array)).size !== array.length;
+     }
+      let stocks = ['ADS', 'AMV', 'ASP', 'BSI', 'CEO', 'CKG', 'CTR', 'DIG', 'DPM', 'FCN', 'GAS', 'HAX', 'HHV', 'HPG', 'HTN', 'IPA', 'KDH', 
+      'LTG', 'MSH', 'NKG', 'NLG', 'PDB', 'PGV', 'PHR', 'PLC', 'PLX', 'PTB', 'RAL', 'SHB', 'SKG', 'SSI', 'TTF', 'TV2', 'VCG', 'VCI', 'VGI', 'VND', 'VPB']
+     //console.log("duplicated: ",hasDuplicates(stocks2))
+    // console.log(stocks2.sort())
       const now = new Date().getTime();
 
       stocks.forEach(stock => {
@@ -31,9 +37,11 @@ describe("Find best deals", () => {
          // cy.get('tbody tr').eq(6)
   
           cy.get('tbody tr').each(($tr, index) => {
-             if(index > 5 && index < 9) {
-              let rowElement = $tr.get(0);
-              let cells = rowElement.cells;
+            let rowElement = $tr.get(0);
+            let cells = rowElement.cells;
+            
+             if(index > 5 && index < 9 && cells.length == 16) {
+              //console.log("count", cells.length);
               let date = cells[12].innerText.split("/");
               let daysGap;
               console.log(date)
@@ -54,7 +62,7 @@ describe("Find best deals", () => {
                   // console.log("mil diff", millisecondsDiff)
                   // console.log("days diff", daysDiff)
       
-                  if (daysGap < 100){
+                  if (daysGap < 60){
                     if(buyAmount > 0 ){
                       buyResult.push({
                         stock: stock,
