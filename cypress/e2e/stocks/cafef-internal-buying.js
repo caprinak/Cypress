@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+ 
  
 
 describe("Find best deals", () => {
@@ -11,9 +11,11 @@ describe("Find best deals", () => {
         return false
       })
       //set up data
-      const result = []
+      const buyResult = []
+      const sellResult = []
       const currentMonth = 12;
-      let stocks = ["HPG", "ADS", "NKG", "VCI", "PHR", "FCN","HHV", "TTF","CEO", "DIG","TV2", "ASP","BSI"]
+      //let stocks = ["HTN"]
+      let stocks = ["HPG", "ADS", "NKG", "VCI", "PHR", "FCN","HHV", "TTF","CEO", "DIG","TV2", "ASP","BSI","HAX","HTN","VND","VCG"]
       const now = new Date().getTime();
 
       stocks.forEach(stock => {
@@ -33,6 +35,7 @@ describe("Find best deals", () => {
               let rowElement = $tr.get(0);
               let cells = rowElement.cells;
               let date = cells[12].innerText.split("/");
+              let daysGap;
               console.log(date)
 
                 if(date) {
@@ -41,20 +44,32 @@ describe("Find best deals", () => {
                  console.log(date)
       
                   let buyAmount = parseInt(cells[10].innerText.replaceAll(",",""))
+                  let sellAmount = parseInt(cells[11].innerText.replaceAll(",",""))
                   console.log(new Date().getTime());
-      
+                  
                   
                   console.log("now", now);
                   let millisecondsDiff = now - new Date(date).getTime();
-                  console.log("mil diff", millisecondsDiff)
-                  console.log("days diff", daysDiff(millisecondsDiff))
+                  daysGap = daysDiff(millisecondsDiff);
+                  // console.log("mil diff", millisecondsDiff)
+                  // console.log("days diff", daysDiff)
       
-                  if (daysDiff(millisecondsDiff) < 100 && buyAmount > 0 )
-                    result.push({
-                      stock: stock,
-                      date: new Date(date),
-                      buyAmount : buyAmount
-                    });
+                  if (daysGap < 100){
+                    if(buyAmount > 0 ){
+                      buyResult.push({
+                        stock: stock,
+                        date: new Date(date),
+                        buyAmount : buyAmount
+                      });
+                    }
+                    if(sellAmount > 0 ){
+                      sellResult.push({
+                        stock: stock,
+                        date: new Date(date),
+                        sellAmount : sellAmount
+                      });
+                    }
+                  } 
                 }
             
              }})
@@ -66,7 +81,12 @@ describe("Find best deals", () => {
           
         
         })
-        cy.log("result", result);
+        cy.log("buy result", buyResult);
+        cy.log("sell result", sellResult);
+
+        cy.writeFile('./cypress/e2e/stocks/buy.json', buyResult)
+        cy.writeFile('./cypress/e2e/stocks/sell.json', sellResult)
+ 
       });
       
     });
